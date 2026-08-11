@@ -1,0 +1,371 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Movie Design</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <h1 class="logo">flakes</h1>
+            </div>
+            <div class="menu-container">
+                <ul class="menu-list">
+                    <li class="menu-list-item active">Home</li>
+                    <li class="menu-list-item">Movies</li>
+                    <li class="menu-list-item">Series</li>
+                    <li class="menu-list-item">Popular</li>
+                    <li class="menu-list-item">Trends</li>
+
+                </ul>
+            </div>
+            <div class="profile-container">
+                <img class="profile-picture" src="img/profile.jpg" alt="">
+                <div class="profile-text-container">
+                    <span class="profile-text">Profile</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <div class="toggle">
+                    <i class="fas fa-moon toggle-icon"></i>
+                    <i class="fas fa-sun toggle-icon"></i>
+                    <div class="toggle-ball"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <i class="left-menu-icon fas fa-search" data-action="search" title="Search"></i>
+        <i class="left-menu-icon fas fa-home" data-action="dashboard" title="Dashboard"></i>
+        <i class="left-menu-icon fas fa-users" data-action="users" title="Users"></i>
+        <i class="left-menu-icon fas fa-bookmark" data-action="bookmarks" title="Bookmarks"></i>
+        <i class="left-menu-icon fas fa-tv" data-action="movies" title="Movies"></i>
+        <i class="left-menu-icon fas fa-hourglass-start" data-action="time" title="Time"></i>
+        <i class="left-menu-icon fas fa-shopping-cart" data-action="store" title="Store"></i>
+    </div>
+
+    <div class="sidebar-panel" id="sidebarPanel" aria-hidden="true">
+        <div class="panel-header">
+            <h3 class="panel-title">Panel</h3>
+            <button class="panel-close" id="panelClose" aria-label="Close">&times;</button>
+        </div>
+        <div class="panel-body">
+            <div class="panel-section" data-panel="search">
+                <input class="panel-search" id="panelSearchInput" placeholder="Search movies, series...">
+                <div class="panel-search-results" id="panelSearchResults"></div>
+            </div>
+            <div class="panel-section" data-panel="users" hidden>
+                <ul class="user-list" id="userList">
+                    <li><strong>Alice</strong><span class="muted"> — Online</span></li>
+                    <li><strong>Bob</strong><span class="muted"> — Offline</span></li>
+                    <li><strong>Chris</strong><span class="muted"> — Away</span></li>
+                </ul>
+            </div>
+            <div class="panel-section" data-panel="bookmarks" hidden>
+                <ul class="bookmark-list" id="bookmarkList">
+                    <li>Inception</li>
+                    <li>The Matrix</li>
+                    <li>Interstellar</li>
+                </ul>
+            </div>
+            <div class="panel-section" data-panel="movies" hidden>
+                <div class="panel-movies" id="panelMovies">
+                    <!-- thumbnails injected by JS -->
+                </div>
+            </div>
+            <div class="panel-section" data-panel="time" hidden>
+                <div class="clock" id="panelClock"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content-container">
+            <div class="hero-slider">
+                <div class="featured-content active" style="background: linear-gradient(to bottom, rgba(0,0,0,0), #090b1a), url('img/f-1.jpg');">
+                    <img class="featured-title" src="img/f-t-1.png" alt="">
+                    <p class="featured-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto illo dolor
+                        deserunt nam assumenda ipsa eligendi dolore, ipsum id fugiat quo enim impedit, laboriosam omnis
+                        minima voluptatibus incidunt. Accusamus, provident.</p>
+                    <button class="featured-button">WATCH</button>
+                </div>
+                <div class="featured-content" style="background: linear-gradient(to bottom, rgba(0,0,0,0), #090b1a), url('img/f-2.jpg');">
+                    <img class="featured-title" src="img/f-t-2.png" alt="">
+                    <p class="featured-desc">Discover the latest original stories with crisp action and stunning
+                        visuals.</p>
+                    <button class="featured-button">WATCH</button>
+                </div>
+                <div class="featured-content" style="background: linear-gradient(to bottom, rgba(0,0,0,0), #090b1a), url('img/spider-man-brand-new-day-official-4k-q2.jpg');">
+                    <h2 class="featured-title">Spider-Man: Brand New Day</h2>
+                    <p class="featured-desc">Swing into the new release with an exciting hero adventure.</p>
+                    <button class="featured-button">WATCH</button>
+                </div>
+                <div class="featured-content" style="background: linear-gradient(to bottom, rgba(0,0,0,0), #090b1a), url('img/16.jpg');">
+                    <h2 class="featured-title">Thor: Ragnarok</h2>
+                    <p class="featured-desc">An epic cosmic battle with thunder, legends, and laughs.</p>
+                    <button class="featured-button">WATCH</button>
+                </div>
+                <div class="featured-content" style="background: linear-gradient(to bottom, rgba(0,0,0,0), #090b1a), url('img/17.jpg');">
+                    <h2 class="featured-title">Michael</h2>
+                    <p class="featured-desc">A classic suspenseful drama with unforgettable twists.</p>
+                    <button class="featured-button">WATCH</button>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                    <span class="dot" data-slide="4"></span>
+                </div>
+            </div>
+            <div class="movie-list-container">
+                <div class="section-header-row">
+                    <h1 class="movie-list-title">NEW RELEASES</h1>
+                    <button class="section-button">WATCH</button>
+                </div>
+                <div class="movie-list-wrapper">
+                    <i class="fas fa-chevron-left arrow left"></i>
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/16.jpg" alt="Thor: Ragnarok poster">
+                            <span class="movie-list-item-title">Thor: Ragnarok</span>
+                            <p class="movie-list-item-desc">An epic cosmic battle with thunder, legends, and laughs.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/17.jpg" alt="Michael poster">
+                            <span class="movie-list-item-title">Michael</span>
+                            <p class="movie-list-item-desc">A classic suspenseful drama with unforgettable twists.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/spider-man-brand-new-day-official-4k-q2.jpg" alt="Spider-Man: Brand New Day poster">
+                            <span class="movie-list-item-title">Spider-Man: Brand New Day</span>
+                            <p class="movie-list-item-desc">Fresh web-slinging action, humor, and heroics in a brand new day.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/1.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/2.jpg" alt="">
+                            <span class="movie-list-item-title">Star Wars</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/3.jpg" alt="">
+                            <span class="movie-list-item-title">Storm</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/4.jpg" alt="">
+                            <span class="movie-list-item-title">1917</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/5.jpg" alt="">
+                            <span class="movie-list-item-title">Avengers</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/6.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/7.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/avatar.jpg" alt="Avatar poster">
+                            <span class="movie-list-item-title">Avatar</span>
+                            <p class="movie-list-item-desc">Epic sci-fi adventure on the world of Pandora.</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right arrow right"></i>
+                </div>
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">NEW RELEASES</h1>
+                <div class="movie-list-wrapper">
+                    <i class="fas fa-chevron-left arrow left"></i>
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/16.jpg" alt="Thor: Ragnarok poster">
+                            <span class="movie-list-item-title">Thor: Ragnarok</span>
+                            <p class="movie-list-item-desc">Thunder and humor collide in a cosmic MCU adventure.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/9.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/10.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/11.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/12.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/1.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/1.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right arrow right"></i>
+                </div>
+            </div>
+            <div class="featured-content"
+                style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('img/f-2.jpg');">
+                <img class="featured-title" src="img/f-t-2.png" alt="">
+                <p class="featured-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto illo dolor
+                    deserunt nam assumenda ipsa eligendi dolore, ipsum id fugiat quo enim impedit, laboriosam omnis
+                    minima voluptatibus incidunt. Accusamus, provident.</p>
+                <button class="featured-button">WATCH</button>
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">NEW RELEASES</h1>
+                <div class="movie-list-wrapper">
+                    <i class="fas fa-chevron-left arrow left"></i>
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/1.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/2.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/15.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/3.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/4.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/5.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/1.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right arrow right"></i>
+                </div>
+            </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">NEW RELEASES</h1>
+                <div class="movie-list-wrapper">
+                    <i class="fas fa-chevron-left arrow left"></i>
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/16.jpg" alt="Thor: Ragnarok poster">
+                            <span class="movie-list-item-title">Thor: Ragnarok</span>
+                            <p class="movie-list-item-desc">Thunder and humor collide in a cosmic MCU adventure.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/17.jpg" alt="Michael poster">
+                            <span class="movie-list-item-title">Michael</span>
+                            <p class="movie-list-item-desc">A powerful thriller with a haunting, unforgettable performance.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/18.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/19.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/7.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/1.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/1.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/1.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right arrow right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
